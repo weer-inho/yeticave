@@ -50,6 +50,16 @@ $goods = [
 $is_auth = rand(0, 1);
 
 $user_name = 'Руслан';
+
+function format_price($price) {
+    $num = ceil($price);
+    if ($num > 999) {
+        $num = number_format($num, 0, '', ' ');
+    }
+
+    return $num . ' ' . '₽';
+};
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -124,7 +134,7 @@ $user_name = 'Руслан';
                         <div class="lot__state">
                             <div class="lot__rate">
                                 <span class="lot__amount">Стартовая цена</span>
-                                <span class="lot__cost"><?=$good["price"]?><b class="rub">р</b></span>
+                                <span class="lot__cost"><?=format_price($good["price"])?></span>
                             </div>
                             <div class="lot__timer timer">
                                 12:23
