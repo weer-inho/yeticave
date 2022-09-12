@@ -1,11 +1,11 @@
 <?php
 
 $categories = [
-    "boards" => "Доски и лыжи", 
-    "attachment" => "Крепления", 
-    "boots" => "Ботинки", 
-    "clothing" => "Одежда", 
-    "tools" => "Инструменты", 
+    "boards" => "Доски и лыжи",
+    "attachment" => "Крепления",
+    "boots" => "Ботинки",
+    "clothing" => "Одежда",
+    "tools" => "Инструменты",
     "other" => "Разное"
 ];
 
