@@ -15,6 +15,10 @@
         </div>
         <ul class="lots__list">
             <? foreach ($goods as $good): ?>
+            <?
+                $remaining_time = calculate_remaining_time($good["expiration_date"]);
+                $isOneHourLeft = $remaining_time[0] === '0';
+            ?>
                 <li class="lots__item lot">
                     <div class="lot__image">
                         <img src="<?=$good["url"]?>" width="350" height="260" alt="">
@@ -27,8 +31,8 @@
                                 <span class="lot__amount">Стартовая цена</span>
                                 <span class="lot__cost"><?=format_price($good["price"])?></span>
                             </div>
-                            <div class="lot__timer timer">
-                                12:23
+                            <div class="lot__timer timer <?= $isOneHourLeft ? "timer--finishing" : ""; ?>">
+                                <?= $remaining_time[0]; ?>:<?= $remaining_time[1]; ?>
                             </div>
                         </div>
                     </div>
